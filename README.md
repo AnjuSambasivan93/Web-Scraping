@@ -29,44 +29,44 @@ This project involves web scraping reviews from the Uber Eats page on Trustpilot
 <h2> Main Functions Used </h2>
 
 
-### **1. `paste0()`**
+#### **1. `paste0()`**
 - Combines strings together without any separator.
 - Used to construct the URL for each Trustpilot page (e.g., `https://www.trustpilot.com/review/ubereats.com?page=1`).
 
-### **2. `sub()`**
+#### **2. `sub()`**
 - Searches for a pattern in a string and replaces it with a new value.
 - Used in:
   - `extract_dates()` to remove the "Date of experience: " text.
   - `extract_rating()` to extract numeric star ratings.
 
-### **3. `as.integer()`**
+#### **3. `as.integer()`**
 - Converts a value or string to an integer.
 - Used in `extract_rating()` to convert star ratings from text to numeric format.
 
-### **4. `min()`**
+#### **4. `min()`**
 - Finds the smallest value in a numeric vector.
 - Used to ensure all extracted lists (titles, text, reviewers, dates, ratings) are of the same length.
 
-### **5. `lapply()`**
+#### **5. `lapply()`**
 - Applies a function to each element of a list or vector.
 - Used to apply the `scrape_page` function to scrape multiple pages.
 
-### **6. `do.call()`**
+#### **6. `do.call()`**
 - Combines a list of objects into one using a specified function.
 - Used with `rbind` to combine multiple data frames from all pages into one.
 
-### **7. `rbind()`**
+#### **7. `rbind()`**
 - Combines data frames by stacking their rows.
 - Used within `do.call()` to combine all scraped data frames into a single data frame.
 
-### **8. `write.csv()`**
+#### **8. `write.csv()`**
 - Saves a data frame to a CSV file.
 - Used to export the combined and cleaned data to `scraped_reviews.csv`.
 
-### **9. `cat()`**
+#### **9. `cat()`**
 - Concatenates and prints messages to the console.
 - Used to display a confirmation message after the CSV file is saved.
 
-### **10. `grep()`**
+#### **10. `grep()`**
 - Searches for a pattern in a vector and returns the index of matches.
 - Used to find raw text entries starting with "Date of experience:" in the reviews.
